@@ -40,6 +40,10 @@ class CrewListViewModel(private val repository: CrewRepository = crewRepository)
     }
 }
 
+sealed interface CrewIntent {
+    data object GetAllCrew : CrewIntent
+}
+
 data class CrewListViewState(
     val isLoading: Boolean = true,
     val crew: List<Crew> = emptyList(),
