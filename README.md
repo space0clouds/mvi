@@ -1,6 +1,4 @@
-# MVI
-
-MVI
+### MVI
 
 view(model(intent()))
 
@@ -14,9 +12,9 @@ sealed interface CrewIntent {
 
 ```kotlin
 fun CrewListScreen(..) {
-		LaunchedEffect(Unit) {
-				viewModel.handleIntent(CrewIntent.GetAllCrew)
-		}
+    LaunchedEffect(Unit) {
+        viewModel.handleIntent(CrewIntent.GetAllCrew)
+    }
 }
 ```
 
@@ -53,13 +51,13 @@ model → view : new model to display
 
 ```kotlin
 fun CrewListScreen(..) {
-		val state by viewModel.state.collectAsState()
+    val state by viewModel.state.collectAsState()
 		
-		when {
-				state.isLoading -> { .. }
-				state.crew.isNotEmpty() -> { 
-						CrewList(..)
-				}
-		}
+    when {
+        state.isLoading -> { .. }
+        state.crew.isNotEmpty() -> { 
+            CrewList(..)
+        }
+    }
 }
 ```
